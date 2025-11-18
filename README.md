@@ -256,7 +256,7 @@ Presentation & demo video
 
 ---
 
-🏁 Conclusion
+ Conclusion
 
 This project provides a scalable and powerful end-to-end image analysis system combining deep learning, cloud deployment, and MLOps.
 It delivers high accuracy, real-time predictions, and a production-ready solution for real-world use cases.
