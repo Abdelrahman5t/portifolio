@@ -1,24 +1,67 @@
- Image Classification & Object Detection System
+**Project Documentation
 
-(Final Project – DEPI)
+Image Classification & Object Detection System**
 
- Overview
+1. Project Overview
 
-This project is an end-to-end AI system capable of performing Image Classification and Object Detection using state-of-the-art deep learning models.
-The system uses ResNet50 for classification and YOLOv8 for detection, with deployment on Microsoft Azure and a complete MLOps pipeline for monitoring, retraining, and experiment tracking.
+This project presents a complete deep learning system capable of performing both image classification and object detection. The aim is to build a scalable, production-ready solution that can classify images into predefined categories while simultaneously detecting and localizing multiple objects within a single frame.
 
-The final product includes a web interface for real-time predictions, cloud APIs, and scalable infrastructure suitable for realistic applications such as surveillance, retail analytics, and automated quality inspection.
+The system leverages state-of-the-art neural networks and cloud computing tools to ensure high accuracy, fast inference, and reliable deployment. A user-friendly web interface enables real-time interaction, making the system suitable for applications such as smart surveillance, automated quality inspection, and retail analytics.
 
 
 ---
 
- Team Members & Roles
+2. System Architecture
+
++----------------------------------------------------+
+|                    Data Pipeline                   |
+|  - Data Collection                                  |
+|  - Labeling & Cleaning                              |
+|  - Augmentation & EDA                               |
++---------------------------+------------------------+
+                            |
+                            v
++----------------------------------------------------+
+|                 Model Development                   |
+|  - Image Classification (ResNet50, CNNs)            |
+|  - Object Detection (YOLOv8)                        |
+|  - Training, Validation, Evaluation                 |
+|  - Transfer Learning                                |
++---------------------------+------------------------+
+                            |
+                            v
++----------------------------------------------------+
+|                   Deployment Layer                  |
+|  - Azure ML                                         |
+|  - Docker Containers                                |
+|  - RESTful Inference API (FastAPI)                 |
++---------------------------+------------------------+
+                            |
+                            v
++----------------------------------------------------+
+|                   Web Interface                     |
+|  - Frontend (HTML/CSS/JS or Streamlit)             |
+|  - Image Upload & Real-Time Predictions             |
++---------------------------+------------------------+
+                            |
+                            v
++----------------------------------------------------+
+|                        MLOps                        |
+|  - MLflow Tracking & Versioning                    |
+|  - Monitoring (Grafana/Prometheus)                 |
+|  - Automated Retraining Pipelines                   |
++----------------------------------------------------+
+
+
+---
+
+3. Team Members & Roles
 
 Member	Role
 
 Basel Mohamed Mostafa	Object Detection Model Implementation & Evaluation
 Zeyad Ahmed Samir	Data Collection, Preprocessing & EDA
-Zeyad Gamal Mohamed	Team Leader, Model Development & Azure Deployment
+Zeyad Gamal Mohamed (Team Leader)	Model Development & Azure Deployment
 Abdulrahman Kamal Saeed	Image Classification Model & Transfer Learning
 Mohamed Hamada Farghali	MLOps, Monitoring & Retraining Strategy
 Omar Yasser Sayed	Web Interface (Frontend & API Integration)
@@ -27,236 +70,123 @@ Omar Yasser Sayed	Web Interface (Frontend & API Integration)
 
 ---
 
- Objectives
+4. Project Objectives
 
-Collect and preprocess high-quality datasets.
+Build high-quality datasets for both image classification and object detection tasks.
 
-Build classification and detection models using ResNet50 and YOLOv8.
+Develop and evaluate deep learning models using CNN architectures, ResNet50, and YOLOv8.
 
-Apply transfer learning and fine-tuning to improve model accuracy.
+Apply transfer learning and domain-specific fine-tuning.
 
-Deploy the models on Azure Cloud using containerized services and REST APIs.
+Deploy models to Microsoft Azure using scalable containerized services.
 
-Implement MLOps (MLflow + Azure ML Pipelines).
+Integrate the models into a RESTful API for easy consumption.
 
-Develop a simple and user-friendly web interface.
+Build a functional web interface for real-time inference.
 
-Ensure scalability, high uptime, and performance metrics.
+Establish full MLOps practices including experiment tracking, monitoring, and versioning.
 
-
-
----
-
- Technologies Used
-
-🔹 Deep Learning
-
-TensorFlow, Keras
-
-OpenCV
-
-YOLOv8 (Ultralytics)
-
-ResNet50
-
-
-🔹 Cloud & MLOps
-
-Azure Machine Learning
-
-Azure Container Instances
-
-MLflow
-
-Prometheus / Grafana
-
-Application Insights
-
-
-🔹 Web Development
-
-FastAPI / Flask
-
-HTML, CSS, JavaScript
-
-Streamlit (optional)
-
-
-🔹 Data Tools
-
-NumPy, Pandas
-
-Matplotlib, Seaborn
-
-Albumentations
+Ensure the system operates reliably under production-like conditions.
 
 
 
 ---
 
- System Architecture
+5. Tools & Technologies
 
-┌────────────────────────┐
-                         │     Web Interface       │
-                         │ (Image Upload + Results)│
-                         └─────────────┬──────────┘
-                                       │
-                  ┌────────────────────┼───────────────────┐
-                  │                    │                   │
-        ┌─────────▼────────┐   ┌──────▼────────┐   ┌──────▼────────┐
-        │ Classification API │   │ Detection API │   │ MLOps Tracking │
-        │ (FastAPI + TF)     │   │ (YOLO + ACI)  │  │    (MLflow)     │
-        └─────────┬─────────┘   └──────┬────────┘   └──────┬────────┘
-                  │                    │                   │
-                  └──────────┬─────────┴─────────┬─────────┘
-                             │                   │
-                      ┌──────▼──────┐     ┌──────▼────────┐
-                      │ Azure ML     │     │ Azure Storage │
-                      │ (Training)   │     │ (Models/Data) │
-                      └──────────────┘     └───────────────┘
+Frameworks: TensorFlow, Keras, OpenCV
+
+Models: ResNet50, YOLOv8
+
+Cloud: Azure Machine Learning, Azure Container Instances
+
+MLOps: MLflow, Azure ML Pipelines
+
+Backend: FastAPI or Django/Flask
+
+Frontend: HTML/CSS/JS or Streamlit
+
+Data Tools: Pandas, NumPy, Matplotlib, Seaborn, Albumentations
+
+Monitoring: Prometheus, Grafana, Azure Insights
+
 
 
 ---
 
- Methodology
+6. Milestones
 
-1. Data Collection & Preprocessing
+Milestone	Description	Deadline
 
-Collected datasets for classification & detection.
+Milestone 1	Data Collection, Preprocessing & EDA	
+Milestone 2	Model Development (Classification & Detection)	
+Milestone 3	Transfer Learning & Azure Deployment
+Milestone 4	MLOps, Web Interface & Monitoring	
+Milestone 5	Final Documentation & Presentation
 
-Cleaning, normalization, augmentation (rotate, flip, brightness).
-
-Ensured dataset balance and valid image-label mappings.
-
-Performed EDA to analyze:
-
-Class distribution
-
-Bounding box verification
-
-Data diversity
-
-
-
-2. Model Development
-
-Classification (ResNet50)
-
-Pre-trained on ImageNet.
-
-Custom top layers added.
-
-Fine-tuned for domain-specific tasks.
-
-Output metrics: Accuracy, F1-score.
-
-
-Object Detection (YOLOv8)
-
-Custom dataset labeled.
-
-YOLOv8 training & validation.
-
-Evaluation using mAP@0.5 and precision/recall.
-
-
-3. Deployment
-
-Models containerized with Docker.
-
-Azure Container Instances used for hosting APIs.
-
-REST APIs built using FastAPI for inference requests.
-
-
-4. MLOps Pipeline
-
-MLflow for experiment tracking and model versioning.
-
-Monitoring includes latency, error rates, throughput.
-
-Retraining pipeline triggered based on data drift or performance drop.
-
-
-5. Web Interface
-
-Simple UI allowing:
-
-Image uploads
-
-Display of predictions
-
-Bounding boxes drawn for detected objects
 
 
 ---
 
-📈 KPIs
+7. Key Performance Indicators (KPIs)
 
 Data Quality
 
 Missing values handled: 100%
 
-Data accuracy: 98%
+Post-cleaning data accuracy: 98%
 
-Dataset diversity: ≥ 90%
+Dataset diversity balance: ≥90% across major classes
 
 
 Model Performance
 
-Classification accuracy: ≥ 92%
+Classification accuracy: ≥92%
 
-Object detection mAP@0.5: ≥ 85%
+Object Detection mAP@0.5: ≥85%
 
-Prediction latency: ≤ 300 ms
+Prediction latency: ≤300 ms per image
 
-Error rate: ≤ 5%
+Error rate: ≤5%
 
 
 Deployment & Scalability
 
-API uptime: ≥ 99%
+API uptime: ≥99%
 
-API response time: ≤ 500 ms
+Response time: ≤500 ms
 
-Real-time detection fps: ≥ 10 FPS
+Real-time demo processing: ≥10 FPS
 
 
 Business Impact
 
-Manual effort reduction: 70%
+Reduction in manual visual work: 70%
 
 Cost savings: 40%
 
-User satisfaction: ≥ 4.5/5
+User satisfaction: ≥4.5/5
 
 
 
 ---
 
- Deliverables
+8. Expected Output
 
-Trained ResNet50 Classification Model
+Fully trained classification and detection models
 
-Trained YOLOv8 Detection Model
+Deployed endpoint on Azure
 
-Azure Cloud Deployment (APIs + Containers)
+Web interface for real-time predictions
 
-Web Interface (HTML/JS or Streamlit)
+Automated MLOps pipeline for tracking and model lifecycle
 
-MLflow tracking system
-
-Monitoring dashboard
-
-Final documentation
-
-Presentation & demo video
+Final presentation and documentation
 
 
 
 ---
 
- Conclusion
+9. Conclusion
 
-This project provides a scalable and powerful end-to-end image analysis system combining deep learning, cloud deployment, and MLOps.
-It delivers high accuracy, real-time predictions, and a production-ready solution for real-world use cases.
+The system integrates modern deep learning techniques with cloud deployment and MLOps best practices to deliver a scalable, efficient, and practical computer vision solution. With its modular architecture and cloud-ready design, the project can be extended into a wide range of real-world applications including security, healthcare, manufacturing, and analytics.
